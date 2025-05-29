@@ -24,6 +24,9 @@ sudo apt update -y && sudo apt upgrade -y
 # Installing deb packages
 sudo nala install flatpak neovim signal-desktop gnome-software-plugin-flatpak gnome-shell-extension-manager gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser gufw ufw -y 
 
+# 40%
+figlet 40% Complete
+
 # Installing locally Downloaded deb packages
 sudo nala install ./warp-term.deb -y && sudo nala install./portmaster.deb -y
 
@@ -33,5 +36,11 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 # Installing flatpak apps
 flatpak install flathub com.rtosta.zapzap network.loki.Session org.gnome.Decibels re.sonny.Junction net.mullvad.MullvadBrowser com.microsoft.Edge net.codelogistics.webapps io.frama.tractor.carburetor org.torproject.torbrowser-launcher com.protonvpn.www com.github.johnfactotum.QuickLookup app.drey.Dialect io.github.fkinoshita.Telegraph app.zen_browser.zen org.qbittorrent.qBittorrent org.mozilla.Thunderbird com.github.PintaProject.Pinta org.telegram.desktop com.discordapp.Discord org.gnome.Firmware com.mattjakeman.ExtensionManager com.github.tchx84.Flatseal io.github.giantpinkrobots.varia me.proton.Pass io.github.josephmawa.Bella io.github.celluloid_player.Celluloid io.bassi.Amberol com.belmoussaoui.Obfuscate io.github.giantpinkrobots.flatsweep org.gnome.design.Lorem org.inkscape.Inkscape com.logseq.Logseq org.cryptomator.Cryptomator dev.qwery.AddWater org.signal.Signal org.localsend.localsend_app io.github._0xzer0x.qurancompanion org.gimp.GIMP --noninteractive
 
+# 95%
+figlet 95% Complete
+
 # Installing Homebrew packages (make sure to have homebrew already installed)
 brew install gcc thefuck fzf ranger mailsy 
+
+# 100%
+figlet 100% Complete
