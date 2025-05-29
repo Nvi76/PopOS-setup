@@ -22,7 +22,7 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 sudo apt update -y && sudo apt upgrade -y 
 
 # Installing deb packages
-sudo nala install flatpak neovim signal-desktop gnome-software-plugin-flatpak gnome-shell-extension-manager gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser gufw ufw -y 
+sudo nala install flatpak neovim kakoune signal-desktop gnome-software-plugin-flatpak gnome-shell-extension-manager gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser gufw ufw -y 
 
 # 40%
 figlet 40% Complete
