@@ -1,3 +1,0 @@
-read the jail.local file thats how the fail2ban /etc/fail2ban/jail.local file should look like and make sure the ignore ip is set to be your device's ip
-here's the command to check the device's ip = hostname -I
-
