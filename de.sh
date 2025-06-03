@@ -9,7 +9,7 @@ chmod +x secure.sh && chmod +x updater.sh && chmod +x apps.sh && chmod +x cliapp
 sudo apt update -y && sudo apt upgrade -y 
 
 # Update and install core snap apps
-sudo snap refresh && sudo snap install firefox thunderbird snap-center 
+sudo snap refresh && sudo snap install firefox thunderbird snap-center firmware-updater
 
 # Installing necesseary packages
 sudo apt install figlet git curl nala -y
