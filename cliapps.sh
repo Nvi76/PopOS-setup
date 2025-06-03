@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+# Updates the system
+sudo apt update && sudo apt upgrade
+
 # Installing essential packages
 sudo apt install build-essential nala -y
 
