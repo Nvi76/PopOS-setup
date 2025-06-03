@@ -8,9 +8,6 @@ sudo apt update -y && sudo apt upgrade -y
 # Installing snap applications
 sudo snap refresh && sudo snap install code --classic && sudo snap install codium --classic && sudo snap install signal-desktop qbittorrent-arnatious notion-desktop element-desktop varia discord vlc telegram-desktop && sudo snap connect varia:shutdown 
 
-# Downloading anytype
-curl https://anytype-release.fra1.cdn.digitaloceanspaces.com/anytype_0.46.8_amd64.deb --output anytype.deb
-
 # Importing brave browser's repo
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list 
 
@@ -24,10 +21,7 @@ sudo nala install btop epiphany-browser flatpak neovim kitty kakoune nautilus-ex
 figlet 40% Complete
 
 # Downloading Cursor
-cd ~ && mkdir Appimages && cd ~/Appimages && curl https://downloads.cursor.com/production/96e5b01ca25f8fbd4c4c10bc69b15f6228c80771/linux/x64/Cursor-0.50.5-x86_64.AppImage -- output Cursor.Appimage && cd ubuntusetup
-
-# Installing locally Downloaded deb packages
-sudo apt install ./anytype.deb
+cd ~ && mkdir Appimages && cd ~/Appimages && curl https://downloads.cursor.com/production/96e5b01ca25f8fbd4c4c10bc69b15f6228c80771/linux/x64/Cursor-0.50.5-x86_64.AppImage -- output Cursor.Appimage && cd ~ && cd ubuntusetup
 
 # Importing flathub's repo
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
