@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Installing essential packages
-sudo nala install build-essential nautilus-extension-gnome-terminal -y
+sudo nala install build-essential -y
 
 # Installing Atuin
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
