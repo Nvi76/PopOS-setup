@@ -20,9 +20,6 @@ sudo nala install btop epiphany-browser flatpak neovim kitty kakoune nautilus-ex
 # 40%
 figlet 40% Complete
 
-# Downloading Cursor
-cd ~ && mkdir Appimages && cd ~/Appimages && curl https://downloads.cursor.com/production/96e5b01ca25f8fbd4c4c10bc69b15f6228c80771/linux/x64/Cursor-0.50.5-x86_64.AppImage -- output Cursor.Appimage && cd ~ && cd ubuntusetup
-
 # Importing flathub's repo
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
@@ -37,3 +34,5 @@ brew install gcc thefuck fzf ranger mailsy
 
 # 100%
 figlet 100% Complete
+
+# Install cursor and anytype yourself
