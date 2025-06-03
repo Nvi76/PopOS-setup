@@ -12,8 +12,11 @@ curl -o /tmp/hblock 'https://raw.githubusercontent.com/hectorm/hblock/v3.5.1/hbl
   && sudo chown 0:0 /usr/local/bin/hblock \
   && sudo chmod 755 /usr/local/bin/hblock && hblock && hostname -I
 
+# Downloading safing portmaster
+curl https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb --output portmaster.deb
+
 # Installing security apps
-sudo nano /etc/fail2ban/jail.local && sudo systemctl restart fail2ban && sudo apt install nala figlet fail2ban clamav clamav-daemon 
+sudo nano /etc/fail2ban/jail.local && sudo systemctl restart fail2ban && sudo apt install nala figlet fail2ban clamav clamav-daemon gufw && sudo nala install ./portmaster.deb
 
 # Enabling services
 sudo systemctl start fail2ban && sudo systemctl enable fail2ban && sudo systemctl enable clamav-daemon 
