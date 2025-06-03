@@ -27,7 +27,7 @@ figlet 40% Complete
 cd ~ && mkdir Appimages && cd ~/Appimages && curl https://downloads.cursor.com/production/96e5b01ca25f8fbd4c4c10bc69b15f6228c80771/linux/x64/Cursor-0.50.5-x86_64.AppImage -- output Cursor.Appimage && cd ~/ubuntusetup
 
 # Installing locally Downloaded deb packages
-sudo nala install ./anytype.deb
+sudo apt install ./anytype.deb
 
 # Importing flathub's repo
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
