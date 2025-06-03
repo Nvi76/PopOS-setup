@@ -6,11 +6,7 @@ set -euo pipefail
 sudo apt update -y && sudo apt upgrade -y
 
 # Installing snap applications
-sudo snap refresh && sudo snap install code --classic && sudo snap install codium --classic && sudo snap install qbittorrent-arnatious notion-desktop element-desktop varia discord vlc telegram-desktop && sudo snap connect varia:shutdown 
-
-# Importing signal's keyring and repo
-wget -O- https://updates.signal.org/desktop/apt/keys.asc | gpg --dearmor > signal-desktop-keyring.gpg &&
-cat signal-desktop-keyring.gpg | sudo tee /usr/share/keyrings/signal-desktop-keyring.gpg > /dev/null && echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] https://updates.signal.org/desktop/apt xenial main' |\ sudo tee /etc/apt/sources.list.d/signal-xenial.list
+sudo snap refresh && sudo snap install code --classic && sudo snap install codium --classic && sudo snap install qbittorrent-arnatious signal-desktop notion-desktop element-desktop varia discord vlc telegram-desktop && sudo snap connect varia:shutdown 
 
 # Downloading anytype
 curl https://anytype-release.fra1.cdn.digitaloceanspaces.com/anytype_0.46.8_amd64.deb --output anytype.deb
@@ -22,7 +18,7 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 sudo apt update -y && sudo apt upgrade -y 
 
 # Installing deb packages
-sudo nala install btop epiphany-browser flatpak neovim kitty kakoune nautilus-extension-gnome-terminal signal-desktop gnome-software-plugin-flatpak gnome-shell-extension-manager gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser -y 
+sudo nala install btop epiphany-browser flatpak neovim kitty kakoune nautilus-extension-gnome-terminal gnome-software-plugin-flatpak gnome-shell-extension-manager gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser -y 
 
 # 40%
 figlet 40% Complete
