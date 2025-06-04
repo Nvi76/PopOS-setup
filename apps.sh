@@ -6,7 +6,7 @@ set -euo pipefail
 sudo apt update -y && sudo apt upgrade -y
 
 # Installing snap applications
-sudo snap refresh && sudo snap install code --classic && sudo snap install codium --classic && sudo snap install signal-desktop qbittorrent-arnatious notion-desktop element-desktop varia discord vlc telegram-desktop && sudo snap connect varia:shutdown 
+sudo snap refresh && sudo snap install code --classic && sudo snap install codium --classic && sudo snap install signal-desktop qbittorrent-arnatious notion-desktop element-desktop varia discord telegram-desktop && sudo snap connect varia:shutdown 
 
 # Importing brave browser's repo
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list 
@@ -15,7 +15,7 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 sudo apt update -y && sudo apt upgrade -y 
 
 # Installing deb apps
-sudo nala install btop epiphany-browser flatpak neovim kakoune nautilus-extension-gnome-terminal gnome-software-plugin-flatpak gnome-shell-extension-manager gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser -y 
+sudo nala install btop epiphany-browser flatpak neovim kakoune nautilus-extension-gnome-terminal gnome-software-plugin-flatpak gnome-shell-extension-manager vlc gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser -y 
 
 # Install cursor and anytype yourself
 
