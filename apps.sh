@@ -14,8 +14,10 @@ sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://b
 # Updates the system
 sudo apt update -y && sudo apt upgrade -y 
 
-# Installing deb packages
+# Installing deb apps
 sudo nala install btop epiphany-browser flatpak neovim kitty kakoune nautilus-extension-gnome-terminal gnome-software-plugin-flatpak gnome-shell-extension-manager gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser -y 
+
+# Install cursor and anytype yourself
 
 # 40%
 figlet 40% Complete
@@ -34,5 +36,3 @@ brew install gcc thefuck fzf ranger mailsy
 
 # 100%
 figlet 100% Complete
-
-# Install cursor and anytype yourself
