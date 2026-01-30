@@ -5,9 +5,6 @@ set -euo pipefail
 # Updates the system
 sudo apt update -y && sudo apt upgrade -y
 
-# Updating snap apps
-sudo snap refresh 
-
 # Updating flatpak apps
 flatpak update 
 
