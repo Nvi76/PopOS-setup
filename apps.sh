@@ -5,28 +5,34 @@ set -euo pipefail
 # Updates the system
 sudo apt update -y && sudo apt upgrade -y
 
-# Installing snap applications
-sudo snap refresh && sudo snap install code --classic && sudo snap install codium --classic && sudo snap install signal-desktop qbittorrent-arnatious notion-desktop element-desktop varia discord telegram-desktop && sudo snap connect varia:shutdown && sudo snap connect element-desktop:password-manager-service
-
 # Importing brave browser's repo
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list 
 
+# Importing vscodium's repo
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+
+# Importing vscodium's repo 
+echo -e 'Types: deb\nURIs: https://download.vscodium.com/debs\nSuites: vscodium\nComponents: main\nArchitectures: amd64 arm64\nSigned-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' \
+| sudo tee /etc/apt/sources.list.d/vscodium.sources
+
 # Updates the system
-sudo apt update -y && sudo apt upgrade -y 
+sudo apt update -y && sudo apt upgrade -y && sudo apt install nala -y
 
-# Installing deb apps
-sudo nala install btop epiphany-browser libfuse2t64 flatpak neovim kakoune edit nautilus-extension-gnome-terminal gnome-software-plugin-flatpak gnome-shell-extension-manager vlc gnome-weather gnome-tweaks gnome-maps gnome-calendar build-essential ubuntu-restricted-extras timeshift libreoffice brave-browser -y 
+# 30%
+figlet 30% Complete
 
-# Install cursor, anytype, portmaseter, and chrome yourself yourself
+# Installing deb apps 
+sudo nala install codium brave-browser -y 
 
-# 40%
-figlet 40% Complete
+# Install portmaster && vscode yourself
 
-# Importing flathub's repo
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+# 65%
+figlet 65% Complete
 
 # Installing flatpak apps
-flatpak install flathub com.rtosta.zapzap org.wezfurlong.wezterm network.loki.Session re.sonny.Junction net.mullvad.MullvadBrowser net.codelogistics.webapps io.frama.tractor.carburetor org.torproject.torbrowser-launcher com.protonvpn.www io.github.fkinoshita.Telegraph app.zen_browser.zen  com.github.PintaProject.Pinta com.github.tchx84.Flatseal me.proton.Pass io.github.josephmawa.Bella org.onlyoffice.desktopeditors io.github.giantpinkrobots.flatsweep org.gnome.design.Lorem org.inkscape.Inkscape com.logseq.Logseq org.cryptomator.Cryptomator dev.qwery.AddWater com.belmoussaoui.Obfuscate org.localsend.localsend_app io.github._0xzer0x.qurancompanion org.gimp.GIMP it.mijorus.gearlever --noninteractive
+flatpak install flathub com.rtosta.zapzap   --noninteractive
 
 # 85%
 figlet 95% Complete
