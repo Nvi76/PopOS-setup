@@ -3,7 +3,7 @@
 set -euo pipefail
 
 # Updates the system
-sudo nala update && sudo nala upgrade
+sudo nala update -y && sudo nala upgrade -y
 
 # Installing Atuin
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
