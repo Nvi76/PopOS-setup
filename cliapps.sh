@@ -6,7 +6,10 @@ set -euo pipefail
 sudo apt update && sudo apt upgrade
 
 # Installing essential packages
-sudo apt install build-essential nala curl git -y
+sudo apt install build-essential fish nala curl git -y
+
+# Run in fish
+fish
 
 # Installing Atuin
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
