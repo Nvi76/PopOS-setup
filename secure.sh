@@ -26,3 +26,6 @@ sudo systemctl start fail2ban && sudo systemctl enable fail2ban && sudo systemct
 
 # Updating Clamav
 sudo rm /var/log/clamav/freshclam.log && sudo freshclam
+
+# Changing to fish shell
+chsh -s /usr/bin/fish
