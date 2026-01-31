@@ -8,6 +8,9 @@ sudo apt update -y && sudo apt upgrade -y
 # Importing brave browser's repo
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg && echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list 
 
+# Downloading vscode 
+curl https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 --output vscode.deb
+
 # Importing vscodium's repo
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
     | gpg --dearmor \
@@ -24,9 +27,7 @@ sudo nala update -y && sudo nala upgrade -y
 figlet 30% Complete
 
 # Installing deb apps 
-sudo nala install codium brave-browser -y 
-
-# Install portmaster && vscode yourself
+sudo nala install codium brave-browser -y && cd  ~/Downloads && sudo nala install ./vscode.deb
 
 # 65%
 figlet 65% Complete
