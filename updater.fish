@@ -1,5 +1,8 @@
 #!/usr/bin/env fish
 
+# Update ClamAV
+sudo freshclam
+
 # Update system
 sudo nala update -y
 and sudo nala upgrade -y
@@ -11,8 +14,5 @@ flatpak update -y
 brew update
 and brew upgrade
 
-# Update ClamAV
-sudo freshclam
-
 # Update complete
-figlet Update Complete
+figlet All Update Completed
