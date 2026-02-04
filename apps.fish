@@ -59,5 +59,4 @@ sudo nala update -y
 sudo nala upgrade -y
 
 # Done
-figlet "Installation Complete"
-
+figlet Installation Complete
