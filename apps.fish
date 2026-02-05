@@ -46,7 +46,6 @@ figlet "50% Complete"
 sudo nala install \
     cava \
     codium \
-    neovim \
     pipx \ 
     brave-browser \
     -y
