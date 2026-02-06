@@ -9,7 +9,7 @@ sudo cp /etc/hosts ~/linuxmintsetup
 curl https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb --output portmaster.deb
 
 # Installing essential packages
-sudo apt install build-essential nala fish curl git
+sudo apt install build-essential nala fish curl git -y
 
 # Installing security apps
 sudo nala install clamav -y && sudo nala install ./portmaster.deb -y 
