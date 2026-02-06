@@ -34,7 +34,7 @@ figlet "30% Complete"
 # Install Flatpak apps
 flatpak install flathub \
     com.rtosta.zapzap \
-    org.kde.krita
+    org.kde.krita \
     org.gimp.GIMP \
     
     --noninteractive
