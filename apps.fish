@@ -32,7 +32,7 @@ Signed-by: /usr/share/keyrings/vscodium-archive-keyring.gpg
 " | sudo tee /etc/apt/sources.list.d/vscodium.sources >/dev/null; or exit 1
 
 # Update after repos
-sudo nala update -y; or exit 1
+sudo nala update; or exit 1
 sudo nala upgrade -y; or exit 1
 
 # Progress
@@ -63,7 +63,7 @@ sudo nala install ./vscode.deb -y; or exit 1
 rm -f vscode.deb
 
 # Final update
-sudo nala update -y
+sudo nala update
 sudo nala upgrade -y
 
 # Homebrew apps
@@ -72,4 +72,4 @@ if type -q brew
 end
 
 # Done
-figlet "Setup Complete" 2>/dev/null; or echo "Setup Complete"
+figlet "Setup Complete Enjoy Your PC" 2>/dev/null; or echo "Setup Complete Enjoy Your PC"
