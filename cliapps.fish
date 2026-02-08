@@ -1,53 +1,59 @@
 #!/usr/bin/env fish
 
-# Exit if any command fails
-function on_error --on-event fish_prompt
-    if test $status -ne 0
-        echo "Script failed. Exiting."
-        exit 1
-    end
+# Exit on error (Fish way)
+function fish_command_not_found
+    echo "Script failed. Exiting."
+    exit 1
 end
 
 # Update system
 sudo nala update -y
+or exit 1
+
 sudo nala upgrade -y
+or exit 1
 
 # Install Atuin
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+or exit 1
 
 # Setup Fish config directory
 mkdir -p ~/.config/fish
 
-# Append Atuin config
+# Config file path
 set config_file ~/.config/fish/config.fish
 
-if not grep -q "atuin init fish" $config_file 2>/dev/null
-    cat >> $config_file << 'EOF'
+# Append Atuin config if missing
+if not grep -q "atuin init fish" $config_file ^/dev/null
+
+    cat >> $config_file <<EOF
 
 # Atuin setup
 if status is-interactive
-    set -gx ATUIN_NOBIND "true"
+    set -gx ATUIN_NOBIND true
     atuin init fish | source
     bind \cr _atuin_search
     bind -M insert \cr _atuin_search
 end
 EOF
+
 end
 
 # Install Homebrew
 curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+or exit 1
 
-# Add Homebrew to PATH (Fish way)
-if not grep -q "brew shellenv" $config_file 2>/dev/null
-    echo '' >> $config_file
-    echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)' >> $config_file
+# Add Homebrew to PATH
+if not grep -q "brew shellenv" $config_file ^/dev/null
+    echo "" >> $config_file
+    echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $config_file
 end
 
-# Apply brew env now
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
+# Apply brew env
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Reload config
 source ~/.config/fish/config.fish
 
-# Installation complete
-figlet Installation Complete
+# Done
+echo "Installation Complete"
