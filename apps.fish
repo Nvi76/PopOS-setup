@@ -14,7 +14,7 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 
 # Download VS Code
 curl -fL \
-https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 \
+https://vscode.download.prss.microsoft.com/dbazure/download/stable/bdd88df003631aaa0bcbe057cb0a940b80a476fa/code_1.109.0-1770171879_amd64.deb \
 -o vscode.deb; or exit 1
 
 # Ensure gpg exists
