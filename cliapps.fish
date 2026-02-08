@@ -47,4 +47,4 @@ end
 source ~/.config/fish/config.fish
 
 # Done
-echo "Installation Complete"
+figlet "Setup Complete" 2>/dev/null; or echo "Setup Complete"
