@@ -2,63 +2,84 @@
 
 # Update the system
 sudo nala update -y
+or exit 1
+
 sudo nala upgrade -y
+or exit 1
 
-# Import Brave Browser’s repo keyring
-sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+# Import Brave keyring
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+or exit 1
 
-# Add the Brave APT source list
-echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list > /dev/null
+# Add Brave repo
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" \
+| sudo tee /etc/apt/sources.list.d/brave-browser-release.list >/dev/null
 
-# Download VS Code .deb
-curl https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 --output vscode.deb
+# Download VS Code
+curl -L \
+https://code.visualstudio.com/sha/download?build=stable\&os=linux-deb-x64 \
+-o vscode.deb
+or exit 1
 
-# Import VSCodium’s repo keyring
-wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+# Import VSCodium keyring
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+| gpg --dearmor \
+| sudo tee /usr/share/keyrings/vscodium-archive-keyring.gpg >/dev/null
+or exit 1
 
-# Add VSCodium APT source
-echo 'Types: deb
+# Add VSCodium repo
+sudo tee /etc/apt/sources.list.d/vscodium.sources >/dev/null <<EOF
+Types: deb
 URIs: https://download.vscodium.com/debs
 Suites: vscodium
 Components: main
 Architectures: amd64 arm64
-Signed-by: /usr/share/keyrings/vscodium-archive-keyring.gpg' | sudo tee /etc/apt/sources.list.d/vscodium.sources > /dev/null
+Signed-by: /usr/share/keyrings/vscodium-archive-keyring.gpg
+EOF
 
-# Update again after adding repos
+# Update after adding repos
 sudo nala update -y
-sudo nala upgrade -y
+or exit 1
 
-# Progress message
-figlet "30% Complete"
+sudo nala upgrade -y
+or exit 1
+
+# Progress
+figlet "30% Complete" 2>/dev/null; or echo "30% Complete"
 
 # Install Flatpak apps
 flatpak install flathub \
-    com.rtosta.zapzap \
-    org.kde.krita \
-    org.gimp.GIMP \
-    
-    --noninteractive
+com.rtosta.zapzap \
+org.kde.krita \
+org.gimp.GIMP \
+--noninteractive
+or exit 1
 
 # 50%
-figlet "50% Complete"
+figlet "50% Complete" 2>/dev/null; or echo "50% Complete"
 
-# Install RPM apps
+# Install packages
 sudo nala install \
-    cava \
-    codium \
-    pipx \ 
-    brave-browser \
-    -y
+cava \
+codium \
+pipx \
+brave-browser \
+-y
+or exit 1
 
-# Installing packages
-sudo nala install ./vscode.deb
+# Install VS Code
+sudo nala install ./vscode.deb -y
+or exit 1
 
-# Update system
-sudo nala update -y 
+# Final update
+sudo nala update -y
 sudo nala upgrade -y
 
-# Installing Homebrew Apps
-brew install neovim thefuck
+# Install Homebrew apps (if brew exists)
+if type -q brew
+    brew install neovim thefuck
+end
 
 # Done
-figlet Setup Complete. Enjoy your PC 
+figlet "Setup Complete" 2>/dev/null; or echo "Setup Complete"
