@@ -13,16 +13,19 @@ echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] http
 | sudo tee /etc/apt/sources.list.d/brave-browser-release.list >/dev/null; or exit 1
 
 # Download VS Code
-curl -L \
+curl -fL \
 https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 \
 -o vscode.deb; or exit 1
+
+# Ensure gpg exists
+sudo nala install -y gnupg; or exit 1
 
 # Import VSCodium keyring
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
 | gpg --dearmor \
 | sudo tee /usr/share/keyrings/vscodium-archive-keyring.gpg >/dev/null; or exit 1
 
-# Add VSCodium repo (Fish-safe)
+# Add VSCodium repo
 printf "Types: deb
 URIs: https://download.vscodium.com/debs
 Suites: vscodium
@@ -37,6 +40,9 @@ sudo nala upgrade -y; or exit 1
 
 # Progress
 figlet "30% Complete" 2>/dev/null; or echo "30% Complete"
+
+# Ensure Flathub exists
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Install Flatpak apps
 flatpak install flathub \
@@ -63,8 +69,8 @@ sudo nala install ./vscode.deb -y; or exit 1
 rm -f vscode.deb
 
 # Final update
-sudo nala update
-sudo nala upgrade -y
+sudo nala update; or exit 1
+sudo nala upgrade -y; or exit 1
 
 # Homebrew apps
 if type -q brew
