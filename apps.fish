@@ -68,7 +68,7 @@ sudo nala upgrade -y
 
 # Homebrew apps
 if type -q brew
-    brew install neovim thefuck
+    brew install neovim thefuck fzf ranger btop trash-cli
 end
 
 # Done
