@@ -20,8 +20,6 @@ if status is-interactive
 
 end
 
-thefuck --alias | source
-
 # Aliases
 alias lsa "ls -a"
 alias update "~/.updater.fish"
