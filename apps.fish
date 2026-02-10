@@ -75,5 +75,8 @@ if type -q brew
     brew install neovim thefuck fzf ranger btop trash-cli ffmpeg
 end
 
+# Installing nvidia drivers
+sudo nala install -y nvidia-driver-580
+
 # Done
 figlet "Setup Complete Enjoy Your PC" 2>/dev/null; or echo "Setup Complete Enjoy Your PC"
