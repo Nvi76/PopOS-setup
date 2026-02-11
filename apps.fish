@@ -55,9 +55,7 @@ figlet "50% Complete" 2>/dev/null; or echo "50% Complete"
 sudo nala install -y \
 cava \
 codium \
-pipx \
 brave-browser \
-spotify-client \
 ; or exit 1
 
 # Install VS Code
