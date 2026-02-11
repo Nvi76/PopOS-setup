@@ -25,4 +25,14 @@ alias lsa "ls -a"
 alias update "~/.updater.fish"
 
 2. after installing homebrew make sure to manually copy the command that homebrew will gave you if it detects homebrew is not on path just to make sure
+# Ensure the config directory exists
+if not test -d ~/.config/fish
+    mkdir -p ~/.config/fish
+end
+
+# Append the Homebrew setup to Fish config
+echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)' >> ~/.config/fish/config.fish
+
+# Evaluate the Homebrew environment in the current session
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)   
 
