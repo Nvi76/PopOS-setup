@@ -5,10 +5,10 @@ set -euo pipefail
 sudo -v
 
 # Backup directory
-mkdir -p "$HOME/linuxmintsetup"
+mkdir -p "$HOME/PopOS-setup"
 
 # Backup hosts
-sudo cp /etc/hosts "$HOME/linuxmintsetup/hosts.backup"
+sudo cp /etc/hosts "$HOME/PopOS-setup/hosts.backup"
 
 # Download Portmaster
 curl -fL https://updates.safing.io/latest/linux_amd64/packages/portmaster-installer.deb \
