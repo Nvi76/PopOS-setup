@@ -4,6 +4,9 @@ set -euo pipefail
 # Ensure sudo access
 sudo -v
 
+# Chmod +x all files
+chmod +x updater.fish && chmod +x cliapps.fish && chmod +x apps.fish && autocpufreq.fish
+
 # Backup directory
 mkdir -p "$HOME/PopOS-setup"
 
