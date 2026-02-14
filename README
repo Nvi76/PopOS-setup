@@ -35,8 +35,6 @@ alias listt "trash-list"
 
 /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 
-
-
 2. after installing homebrew make sure to manually copy the command that homebrew will gave you if it detects homebrew is not on path just to make sure
 # Ensure the config directory exists
 if not test -d ~/.config/fish
