@@ -22,7 +22,7 @@ sudo apt update
 sudo apt install -y build-essential nala fish curl git
 
 # Install security apps
-sudo nala install -y clamav clamav-base clamav-daemon clamav-freshclam
+sudo nala install -y clamav clamav-base clamav-freshclam
 sudo nala install -y ./portmaster.deb || sudo apt -f install -y
 
 # Cleanup
