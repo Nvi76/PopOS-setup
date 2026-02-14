@@ -45,10 +45,4 @@ echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)' >> ~/.config/fis
 # Evaluate the Homebrew environment in the current session
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)   
 
-3. ClamAV Setup
-    1)  at /etc/clamav/clamd.conf make sure to get this enabled (make sure the username are correct)
-        OnAccessIncludePath /home
-        OnAccessExcludePath /home/user/Downloads
-        OnAccessPrevention yes
-
         
