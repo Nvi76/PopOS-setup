@@ -36,7 +36,8 @@ sudo systemctl enable --now clamav-clamonacc
 # Configuring the clamd.conf file
 sudo nano /etc/clamav/clamd.conf
 # OnAccessIncludePath /home
-# OnAccessExcludePath /home/user/Downloads   
+# OnAccessExcludePath /home/user/Downloads
+# OnAccessPrevention yes
 
 # Update ClamAV
 sudo systemctl stop clamav-freshclam
