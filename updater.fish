@@ -12,6 +12,9 @@ sudo nala upgrade -y; or exit 1
 # Update Flatpak apps
 flatpak update -y; or exit 1
 
+# Update Atuin
+atuin-update
+
 # Update Homebrew (if installed)
 if type -q brew
     brew update; or exit 1
