@@ -1,4 +1,4 @@
-1. Make sure to get this in ~/.config/fish/config.fish
+1. Make sure to the config file in ~/.config/fish/config.fish is like this
 
 if status is-interactive
     # Prevent Atuin from setting its own (broken) bindings
@@ -20,9 +20,16 @@ if status is-interactive
 
 end
 
+thefuck --alias | source
+
 # Aliases
 alias lsa "ls -a"
 alias update "~/.updater.fish"
+alias copy "wl-copy <"
+alias paste "wl-paste >"
+
+/home/linuxbrew/.linuxbrew/bin/brew shellenv | source
+
 
 2. after installing homebrew make sure to manually copy the command that homebrew will gave you if it detects homebrew is not on path just to make sure
 # Ensure the config directory exists
