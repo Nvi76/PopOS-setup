@@ -5,7 +5,7 @@ set -euo pipefail
 sudo -v
 
 # Chmod +x all files
-chmod +x updater.fish && chmod +x cliapps.fish && chmod +x apps.fish && autocpufreq.fish
+chmod +x updater.fish && chmod +x cliapps.fish && chmod +x apps.fish && chmod +x autocpufreq.fish
 
 # Backup directory
 mkdir -p "$HOME/PopOS-setup"
@@ -39,4 +39,4 @@ sudo systemctl start clamav-freshclam
 # Set default shell
 chsh -s /usr/bin/fish
 
-figlet "Setup Complete Log out and Log in to use fish" 2>/dev/null; or echo "Setup Complete Log out and Log in to use fish"
+figlet Setup Complete Log out and Log in to use fish
