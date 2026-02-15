@@ -1,7 +1,6 @@
 1. Make sure the config file in ~/.config/fish/config.fish is like this
 
-if status is-interactive
-    # Prevent Atuin from setting its own (broken) bindings
+   # Prevent Atuin from setting its own (broken) bindings
     set -gx ATUIN_NOBIND true
     atuin init fish | source
 
@@ -30,12 +29,10 @@ alias trm "trash-put"
 alias trestore "trash-restore"
 alias tbin "trash-empty"
 alias listt "trash-list"
-alias rebootbios "systemctl reboot --firmware-setup"
 
 thefuck --alias | source
 
 /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
 
 2. after installing homebrew make sure to manually copy the command that homebrew will gave you if it detects homebrew is not on path just to make sure
 # Ensure the config directory exists
