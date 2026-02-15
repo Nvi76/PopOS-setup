@@ -57,9 +57,6 @@ rm -f vscode.deb
 sudo nala update; or exit 1
 sudo nala upgrade -y; or exit 1
 
-# Install Nixpkgs apps
-nix profile add nixpkgs#luanti
-
 # Homebrew apps
 if type -q brew
     brew install neovim fzf ranger btop thefuck trash-cli ffmpeg fastfetch
