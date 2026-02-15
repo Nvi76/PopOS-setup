@@ -49,7 +49,7 @@ echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)' >> ~/.config/fis
 # Evaluate the Homebrew environment in the current session
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
 
-3. make sure the ~/.config/nix/nix.conf file have this inside of it 
+3. make sure the ~/.config/nix/nix.conf file have this inside of it BEFORE running apps.fish
 experimental-features = nix-command flakes
 
         
