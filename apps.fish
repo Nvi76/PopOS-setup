@@ -23,7 +23,7 @@ flatpak install com.rtosta.zapzap app.zen_browser.zen org.gimp.GIMP com.github.t
 figlet "50% Complete" 2>/dev/null; or echo "50% Complete"
 
 # Install packages
-sudo nala install -y codium brave-browser ; or exit 1
+sudo nala install -y codium brave-browser; or exit 1
 
 # Install VS Code
 sudo nala install ./vscode.deb -y; or exit 1
