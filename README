@@ -20,8 +20,6 @@ if status is-interactive
 
 end
 
-thefuck --alias | source
-
 # Aliases
 alias lsa "ls -a"
 alias update "~/.updater.fish"
@@ -34,11 +32,10 @@ alias tbin "trash-empty"
 alias listt "trash-list"
 alias rebootbios "systemctl reboot --firmware-setup"
 
+thefuck --alias | source
+
 /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
-
-
-/home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 
 2. after installing homebrew make sure to manually copy the command that homebrew will gave you if it detects homebrew is not on path just to make sure
 # Ensure the config directory exists
@@ -50,6 +47,9 @@ end
 echo 'eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)' >> ~/.config/fish/config.fish
 
 # Evaluate the Homebrew environment in the current session
-eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)   
+eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
+
+3. make sure the ~/.config/nix/nix.conf file have this inside of it 
+experimental-features = nix-command flakes
 
         
