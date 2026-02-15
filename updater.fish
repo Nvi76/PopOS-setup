@@ -24,7 +24,7 @@ if sudo auto-cpufreq --update
     echo "Update succeeded"
 else
     figlet "Skipping auto-cpufreq update, command failed or not found"
-end   
+end
 
 # Update Homebrew (if installed)
 if type -q brew
