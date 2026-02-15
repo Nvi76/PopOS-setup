@@ -21,9 +21,9 @@ atuin-update
 
 # Update auto-cpufreq
 if sudo auto-cpufreq --update
-    echo "Update succeeded"
+    figlet Update succeeded
 else
-    figlet "Skipping auto-cpufreq update, command failed or not found"
+    figlet Skipping auto-cpufreq update, command failed or not found
 end
 
 # Update Homebrew (if installed)
