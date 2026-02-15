@@ -11,7 +11,7 @@ sudo nala upgrade -y; or exit 1
 
 # Update Nixpkgs apps
 nix-channel --update; or exit 1
-nix-env -u; or exit 1
+nix profile upgrade --all; or exit 1
 
 # Update Flatpak apps
 flatpak update -y; or exit 1
