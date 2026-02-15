@@ -32,6 +32,7 @@ alias trm "trash-put"
 alias trestore "trash-restore"
 alias tbin "trash-empty"
 alias listt "trash-list"
+alias rebootbios "systemctl reboot --firmware-setup"
 
 /home/linuxbrew/.linuxbrew/bin/brew shellenv | source
 eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
