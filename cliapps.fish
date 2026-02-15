@@ -1,15 +1,36 @@
 #!/usr/bin/env fish
 
-# Add PPA'S
-sudo add-apt-repository universe -y; or exit 1
-sudo add-apt-repository ppa:agornostal/ulauncher -y; or exit 1
+# Add luanti's PPA
+sudo add-apt-repository ppa:minetestdevs/stable -y; or exit 1
+
+# Import Brave keyring
+sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
+https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg; or exit 1
+
+# Add Brave repo
+echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" \
+| sudo tee /etc/apt/sources.list.d/brave-browser-release.list >/dev/null; or exit 1
+
+# Import VSCodium keyring
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+| gpg --dearmor \
+| sudo tee /usr/share/keyrings/vscodium-archive-keyring.gpg >/dev/null; or exit 1
+
+# Add VSCodium repo
+printf "Types: deb
+URIs: https://download.vscodium.com/debs
+Suites: vscodium
+Components: main
+Architectures: amd64 arm64
+Signed-by: /usr/share/keyrings/vscodium-archive-keyring.gpg
+" | sudo tee /etc/apt/sources.list.d/vscodium.sources >/dev/null; or exit 1
 
 # Update system
 sudo nala update; or exit 1
 sudo nala upgrade -y; or exit 1
 
 # Install Cliapps
-sudo nala install -y figlet fish curl git vulkan-tools os-prober build-essential python3-tk python3-distutils-extra pipx mesa-utils gnupg copyq cava ulauncher; or exit 1
+sudo nala install -y figlet fish curl git vulkan-tools os-prober build-essential python3-tk python3-distutils-extra pipx mesa-utils gnupg wl-clipboard cava; or exit 1
 
 # Install Atuin
 curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh; or exit 1
