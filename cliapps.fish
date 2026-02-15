@@ -1,8 +1,5 @@
 #!/usr/bin/env fish
 
-# Add luanti's PPA
-sudo add-apt-repository ppa:minetestdevs/stable -y; or exit 1
-
 # Import Brave keyring
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
 https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg; or exit 1
