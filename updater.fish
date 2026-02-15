@@ -21,7 +21,7 @@ atuin-update
 
 # Update auto-cpufreq
 if sudo auto-cpufreq --update
-    figlet Update succeeded
+    figlet Auto-cpufre Update succeeded
 else
     figlet Skipping auto-cpufreq update, command failed or not found
 end
