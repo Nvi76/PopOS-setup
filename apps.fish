@@ -69,4 +69,4 @@ end
 sudo nala install -y nvidia-driver-580
 
 # Done
-figlet "Setup Complete Enjoy Your PC" 2>/dev/null; or echo "Setup Complete Enjoy Your PC"Your PC"
+figlet "Setup Complete Enjoy Your PC" 2>/dev/null; or echo "Setup Complete Enjoy Your PC Your PC"
