@@ -19,6 +19,9 @@ flatpak update -y; or exit 1
 # Update Atuin
 atuin-update
 
+# Update auto-cpufreq
+sudo auto-cpufreq --update; or exit 1
+
 # Update Homebrew (if installed)
 if type -q brew
     brew update; or exit 1
